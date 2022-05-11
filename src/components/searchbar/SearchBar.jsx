@@ -48,19 +48,18 @@ const SearchBar = () => {
   return (
     <div className="search">
       <div className="search__item">
-        <FontAwesomeIcon icon={faBed} className="headerIcon" />
+        <FontAwesomeIcon icon={faBed} className="search__item__icon" />
         <input
-          type="text"
-          placeholder="Where are you going?"
-          className="headerSearchInput"
+          type="search"
+          placeholder="Search a place ..."
           onChange={(e) => setDestination(e.target.value)}
         />
       </div>
       <div className="search__item">
-        <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
+        <FontAwesomeIcon icon={faCalendarDays} className="search__item__icon" />
         <span
           onClick={() => setOpenDate(!openDate)}
-          className="headerSearchText"
+          className="search__item__text"
         >{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
           date[0].endDate,
           "MM/dd/yyyy"
@@ -71,83 +70,62 @@ const SearchBar = () => {
             onChange={(item) => setDate([item.selection])}
             moveRangeOnFirstSelection={false}
             ranges={date}
-            className="date"
+            className="search__item__date"
             minDate={new Date()}
           />
         )}
       </div>
       <div className="search__item">
-        <FontAwesomeIcon icon={faPerson} className="headerIcon" />
+        <FontAwesomeIcon icon={faPerson} className="search__item__icon" />
         <span
           onClick={() => setOpenOptions(!openOptions)}
-          className="headerSearchText"
+          className="search__item__text"
         >{`${options.adult} adult · ${options.children} children · ${options.room} room`}</span>
         {openOptions && (
-          <div className="options">
-            <div className="optionItem">
-              <span className="optionText">Adult</span>
-              <div className="optionCounter">
+          <div className="search__item__options">
+            <div className="search__item__options__option">
+              <span className="search__item__options__option-text">Adult</span>
+              <div className="search__item__options__option__counter">
                 <button
                   disabled={options.adult <= 1}
-                  className="optionCounterButton"
                   onClick={() => handleOption("adult", "d")}
                 >
                   -
                 </button>
-                <span className="optionCounterNumber">{options.adult}</span>
-                <button
-                  className="optionCounterButton"
-                  onClick={() => handleOption("adult", "i")}
-                >
-                  +
-                </button>
+                <span>{options.adult}</span>
+                <button onClick={() => handleOption("adult", "i")}>+</button>
               </div>
             </div>
-            <div className="optionItem">
-              <span className="optionText">Children</span>
-              <div className="optionCounter">
+            <div className="search__item__options__option">
+              <span className="search__item__options__option-text">
+                Children
+              </span>
+              <div className="search__item__options__option__counter">
                 <button
                   disabled={options.children <= 0}
-                  className="optionCounterButton"
                   onClick={() => handleOption("children", "d")}
                 >
                   -
                 </button>
-                <span className="optionCounterNumber">{options.children}</span>
-                <button
-                  className="optionCounterButton"
-                  onClick={() => handleOption("children", "i")}
-                >
-                  +
-                </button>
+                <span>{options.children}</span>
+                <button onClick={() => handleOption("children", "i")}>+</button>
               </div>
             </div>
-            <div className="optionItem">
-              <span className="optionText">Room</span>
-              <div className="optionCounter">
+            <div className="search__item__options__option">
+              <span className="search__item__options__option-text">Room</span>
+              <div className="search__item__options__option__counter">
                 <button
                   disabled={options.room <= 1}
-                  className="optionCounterButton"
                   onClick={() => handleOption("room", "d")}
                 >
                   -
                 </button>
-                <span className="optionCounterNumber">{options.room}</span>
-                <button
-                  className="optionCounterButton"
-                  onClick={() => handleOption("room", "i")}
-                >
-                  +
-                </button>
+                <span>{options.room}</span>
+                <button onClick={() => handleOption("room", "i")}>+</button>
               </div>
             </div>
           </div>
         )}
-      </div>
-      <div className="search__item">
-        <button className="headerBtn" onClick={handleSearch}>
-          Search
-        </button>
       </div>
     </div>
   );
