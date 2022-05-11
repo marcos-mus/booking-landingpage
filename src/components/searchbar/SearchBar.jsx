@@ -127,6 +127,11 @@ const SearchBar = () => {
           </div>
         )}
       </div>
+      <div className="search__item">
+        <button className="search__item__button" onClick={handleSearch}>
+          Search
+        </button>
+      </div>
     </div>
   );
 };
