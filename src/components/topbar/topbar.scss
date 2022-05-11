@@ -1,0 +1,33 @@
+.topbar {
+  height: 50px;
+  width: 100%;
+  padding: 0 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--primary);
+  color: #fff;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 10;
+
+  &__logo {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  &__buttons {
+    &__button {
+      border: none;
+      outline: none;
+      padding: 5px 10px;
+      margin-right: 20px;
+      cursor: pointer;
+      color: var(--secondary);
+      background-color: #fff;
+    }
+  }
+}
