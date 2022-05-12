@@ -1,0 +1,48 @@
+.container__type {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px 150px;
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    &__card {
+      width: calc(25% - 20px);
+      height: 200px;
+      border-radius: 15px;
+      border-top: 5px solid #febb02;
+      border-bottom: 5px solid #febb02;
+
+      position: relative;
+
+      &__body {
+        position: absolute;
+        bottom: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+
+        &__title {
+          color: white;
+          font-weight: 300 !important;
+          font-size: .9rem !important;
+        }
+
+        &__desc {
+          color: white;
+          font-size: 2rem;
+          font-weight: 900;
+
+          span {
+            color: lightgrey;
+            font-size: .9rem !important;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
