@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 import "./topbar.scss";
 
 const TopBar = () => {
+  const { user } = useContext(AuthContext);
   return (
     <div className="topbar">
       <div className="topbar__logo">
@@ -9,14 +12,18 @@ const TopBar = () => {
           Go Booking{" "}
         </Link>
       </div>
-      <div className="topbar__buttons">
-        <Link to="/login" className="topbar__buttons__button">
-          Login
-        </Link>
-        <Link to="/register" className="topbar__buttons__button">
-          Register
-        </Link>
-      </div>
+      {!user ? (
+        <div className="topbar__buttons">
+          <Link to="/login" className="topbar__buttons__button">
+            Login
+          </Link>
+          <Link to="/register" className="topbar__buttons__button">
+            Register
+          </Link>
+        </div>
+      ) : (
+        user.username
+      )}
     </div>
   );
 };

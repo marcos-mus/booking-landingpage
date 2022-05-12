@@ -1,6 +1,6 @@
 import "./hotels.scss";
 import { useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import SearchItem from "../../components/searchItem/SearchItem";
@@ -24,8 +24,6 @@ const Hotels = () => {
   const handleSearch = () => {
     reFetchData();
   };
-
-  useEffect(() => {}, [min, max, destination]);
 
   return (
     <div>
