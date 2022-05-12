@@ -1,0 +1,35 @@
+.container {
+  padding: 50px 150px;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .card {
+    width: calc(25% - 20px);
+    height: 200px;
+    border-radius: 10px;
+
+    position: relative;
+
+    &-body {
+      position: absolute;
+      bottom: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        color: white;
+        font-weight: 600;
+        font-size: 1.9em;
+      }
+
+      span {
+        color: lightgrey;
+      }
+    }
+  }
+}
