@@ -4,7 +4,11 @@ import "./topbar.scss";
 const TopBar = () => {
   return (
     <div className="topbar">
-      <div className="topbar__logo">Go Booking</div>
+      <div className="topbar__logo">
+        <Link to="/" style={{ color: "white" }}>
+          Go Booking{" "}
+        </Link>
+      </div>
       <div className="topbar__buttons">
         <Link to="/login" className="topbar__buttons__button">
           Login

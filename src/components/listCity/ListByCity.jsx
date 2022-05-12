@@ -40,7 +40,7 @@ const ListByCity = () => {
             className="card"
             key={index}
             style={{
-              background: `linear-gradient(0deg, rgba(14, 25, 48, 1) 11%, rgba(14, 25, 48, 0.7685324618128502) 45%, rgba(14, 25, 48, 0.2531262993478641) 95%),url("${item.thumnail}")`,
+              background: `linear-gradient(0deg, #354362 11%, rgba(30, 31, 31, 0.769) 45%, rgba(34, 51, 86, 0.253) 95%),url("${item.thumnail}")`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
